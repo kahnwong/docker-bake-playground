@@ -30,3 +30,8 @@ docker buildx bake
 - <https://docs.docker.com/build/bake/reference/#targetssh>
 - <https://docs.docker.com/build/bake/reference/#targetsecret>
 - <https://docs.docker.com/build/bake/reference/#targetmatrix>
+
+## Findings
+
+- For GitHub Actions, docker bake's attestation doesn't show up in GHA's attestation ui
+- Doesn't seem to be a clean way to set git sha as image tag

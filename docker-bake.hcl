@@ -5,8 +5,20 @@ group "default" {
 target "go" {
   context    = "./go"
   dockerfile = "Dockerfile"
-  tags = ["docker-bake-playground/go:latest"]
+  tags = ["ghcr.io/kahnwong/docker-bake-playground/go:latest"]
   platforms = ["linux/amd64"]
+
+  cache-from = [
+    {
+      type = "gha"
+    }
+  ]
+  cache-to = [
+    {
+      type = "gha"
+      mode = "max"
+    }
+  ]
 
   attest = [
     {
@@ -14,7 +26,7 @@ target "go" {
       mode = "max"
     },
     {
-      type = "sbom"
+      type = "provenance"
     }
   ]
 }
@@ -22,8 +34,20 @@ target "go" {
 target "rust" {
   context    = "./rust"
   dockerfile = "Dockerfile"
-  tags = ["docker-bake-playground/rust:latest"]
+  tags = ["ghcr.io/kahnwong/docker-bake-playground/rust:latest"]
   platforms = ["linux/amd64"]
+
+  cache-from = [
+    {
+      type = "gha"
+    }
+  ]
+  cache-to = [
+    {
+      type = "gha"
+      mode = "max"
+    }
+  ]
 
   attest = [
     {
@@ -31,7 +55,7 @@ target "rust" {
       mode = "max"
     },
     {
-      type = "sbom"
+      type = "provenance"
     }
   ]
 }
