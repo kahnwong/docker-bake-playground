@@ -23,3 +23,10 @@ docker buildx bake
 
 2. Restart docker: `sudo systemctl restart docker`
 3. Verify with: `docker info -f '{{ .DriverStatus }}'`. Should return `[[driver-type io.containerd.snapshotter.v1]]`
+
+
+## Interesting directives
+
+- <https://docs.docker.com/build/bake/reference/#targetssh>
+- <https://docs.docker.com/build/bake/reference/#targetsecret>
+- <https://docs.docker.com/build/bake/reference/#targetmatrix>

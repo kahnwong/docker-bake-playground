@@ -3,7 +3,6 @@ FROM golang:1.24-alpine AS build
 WORKDIR /build
 
 COPY go.mod ./
-RUN go mod download
 
 COPY *.go ./
 

@@ -6,6 +6,7 @@ target "go" {
   context    = "./go"
   dockerfile = "Dockerfile"
   tags = ["docker-bake-playground/go:latest"]
+  platforms = ["linux/amd64"]
 
   attest = [
     {
@@ -22,6 +23,7 @@ target "rust" {
   context    = "./rust"
   dockerfile = "Dockerfile"
   tags = ["docker-bake-playground/rust:latest"]
+  platforms = ["linux/amd64"]
 
   attest = [
     {
